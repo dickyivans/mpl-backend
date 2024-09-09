@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: mpl
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mpl
+    username: dispart
+    password: U9VRIb!&fc
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8040
+
+mpl:
+  public:
+    resource:
+      path:
+        base: /api/v1
+  admin:
+    resource:
+      path:
+        base: ${mpl.public.resource.path.base}/admin
